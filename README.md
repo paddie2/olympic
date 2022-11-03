@@ -1,1 +1,1 @@
-This is an [example link](./html/index1.html).
+ [点击进入访问](./html/index1.html).
