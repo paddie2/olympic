@@ -1,0 +1,67 @@
+.box {
+
+    width: 1200px;
+
+    height: 80vh;
+
+    display: grid; 
+
+    grid-template-rows: 10% 80% 10%;  
+
+}
+
+.header {
+
+    background-color: #6ac13c;
+
+    display: grid;
+
+    /*居中*/
+
+    align-content: center;
+
+    justify-content: center;
+
+}
+
+.content {
+
+    /*background-color: #f1b0b7;*/
+
+    display: grid;
+
+    grid-template-columns: 10% 80% 10%;
+
+    grid-gap: 20px;  
+
+}
+
+.footer {
+
+    background-color: #ffc107;
+
+    display: grid;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+.left {
+
+    background-color: #5599FF;
+
+}
+
+.center {
+
+    background-color: lightgreen;
+
+}
+
+.right {
+
+    background-color: orchid;
+
+}
