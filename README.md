@@ -25,8 +25,8 @@
        <div class="nav" >
             <ul class="main">
                 <li class="main"><a href="#">主页<span class="sprite smile"></span></a></li>
-                <li class="main"><a href="./grid.html" target="_blank"><span class="sprite fish"></span>国外品种猫</a></li>
-                <li class="main" ><a href="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&ch=3&tn=site888_2_pg&wd=%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BB%A5%E5%8F%8A%E5%9C%A8GitHub%E4%B8%8A%E4%B8%8A%E4%BC%A0%E4%BA%86%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%2C%E5%8D%B4%E6%B2%A1%E6%9C%89%E6%98%BE%E7%A4%BA%E7%9B%B8%E5%85%B3%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9&oq=%25E4%25B8%25BA%25E4%25BB%2580%25E4%25B9%2588%25E4%25BB%25A5%25E5%258F%258A%25E5%259C%25A8GitHub%25E4%25B8%258A%25E4%25B8%258A%25E4%25BC%25A0%25E4%25BA%2586%25E5%2589%258D%25E7%25AB%25AF%25E9%25A1%25B9%25E7%259B%25AE%252C%25E5%258D%25B4%25E6%25B2%25A1%25E6%259C%2589%25E6%2598%25BE%25E7%25A4%25BA&rsv_pq=ea94a04f00035d85&rsv_t=36e5hynpPOpYiW3qxnf3cfNYNFWqzDNS4uJ0F99eeMVtvaixCOcnynC94VumK1VOIPhm&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_sug3=14&rsv_sug2=0&rsv_btype=t&inputT=6091&rsv_sug4=6999"><span class="sprite people"></span>编辑</a></li>
+                <li class="main"><a href="./index2.html" target="_blank"><span class="sprite fish"></span>国外品种猫</a></li>
+                <li class="main" ><a href=""><span class="sprite people"></span>编辑</a></li>
                 <li class="main"><a href=""><span class="sprite smile"></span>推荐</a></li>
             </ul>
         </div>
@@ -95,5 +95,3 @@
            
     </body>
  </html>
-            
-       
