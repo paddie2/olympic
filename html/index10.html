@@ -65,7 +65,37 @@
                font-size: large;
                color: cornflowerblue;
             }
-            
+            .comments{
+                display: block;
+                width:1100px;
+                height:800px;
+                margin-left: 100px;
+                margin-right: 100px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-style: double;
+                border-color:#000000;
+                border-width: 2px;
+            }
+            .cheader{
+                font-size: 20px;
+                color: cornflowerblue;
+                text-align: center;
+            }
+            @media only screen and (max-width: 700px){
+                .responsive {
+                    width: 49.99999%;
+                    margin: 6px 0;
+                }
+            }
+
+            @media only screen and (max-width: 500px){
+                .responsive {
+                    width: 100%;
+                }
+            }
         </style>
         <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     </head>
@@ -124,10 +154,14 @@
            <img src="https://pic.rmb.bdstatic.com/bjh/down/612629d8f474b0ed9250c8b10046e4d7.gif">
         </div>
         <br><br>
-    <footer class="footer me-text">
-        <div class="tone">
-            <p>footer</p>
-        </div>
-    </footer>
+        <div class="comments">
+            <script>
+                 $.get("./tpl/comment.tpl",function(result){
+                    $('.comments').html(result);
+                });
+            </script>
+        </div> 
+    
+   
     </body>
 </html>
