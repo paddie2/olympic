@@ -65,7 +65,37 @@
                font-size: large;
                color: cornflowerblue;
             }
-            
+            .comments{
+                display: block;
+                width:1100px;
+                height:800px;
+                margin-left: 100px;
+                margin-right: 100px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-style: double;
+                border-color:#000000;
+                border-width: 2px;
+            }
+            .cheader{
+                font-size: 20px;
+                color: cornflowerblue;
+                text-align: center;
+            }
+            @media only screen and (max-width: 700px){
+                .responsive {
+                    width: 49.99999%;
+                    margin: 6px 0;
+                }
+            }
+
+            @media only screen and (max-width: 500px){
+                .responsive {
+                    width: 100%;
+                }
+            }
         </style>
         <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     </head>
@@ -127,10 +157,14 @@
            <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp2.itc.cn%2Fimages01%2F20200807%2Fbb9713c8bc0a4f60a5c31f8076b2334f.jpeg&refer=http%3A%2F%2Fp2.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670324363&t=4e7e278a540d3a3fb156cee1b09aeae1">
         </div>
         <br><br>
-    <footer class="footer me-text">
-        <div class="tone">
-            <p>footer</p>
-        </div>
-    </footer>
+        <div class="comments">
+            <script>
+                 $.get("./tpl/comment.tpl",function(result){
+                    $('.comments').html(result);
+                });
+            </script>
+        </div> 
+    
+   
     </body>
 </html>
