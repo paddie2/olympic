@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="stylesheet" href="../css/test1.css">
         <title> 详情页</title>
+        <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <style>
             .clearfix:before, .clearfix:after {
                 content: " ";
@@ -35,6 +37,20 @@
                 padding-left: 10px;
                 background-color: rgb(209, 193, 193);
             }
+            .comments{
+                display: block;
+                width:1100px;
+                height:800px;
+                margin-left: 100px;
+                margin-right: 100px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-style: double;
+                border-color:#000000;
+                border-width: 2px;
+            }
             .title1{
                 text-align: center;
                 text-shadow:5px 5px 5px #FF0000;
@@ -48,7 +64,7 @@
             .footer{
                 display: grid;
                 width: 1500px;
-                height: 100px;
+                height: 1500px;
                 grid-template-columns: repeat(3,1fr);
                 background-color: dimgrey;
             }
@@ -65,9 +81,23 @@
                font-size: large;
                color: cornflowerblue;
             }
-            
+            .cheader{
+                font-size: 20px;
+                color: cornflowerblue;
+                text-align: center;
+            }
         </style>
-        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" >
+        function fun(){
+             var con = $('#vc').val();
+             var li="<li >"+con+"<br><a href='#userbody' class='remove' onclick='RemoveRow(this);'>删除</a><hr></li>";
+              $('#userbody').append(li);
+          }
+        function RemoveRow(o){
+        $(o).parent().remove();
+    }
+        </script>
+      
     </head>
     <body>
         <h1 class="title1">蓝猫</h1>
@@ -138,10 +168,13 @@
             </p>
         </div>
         <br><br>
-    <footer class="footer me-text">
-        <div class="tone">
-            <p>footer</p>
+        <div class="comments">
+            <script>
+                $.get("./tpl/comment.tpl",function(result){
+                   $('.comments').html(result);
+               });
+           </script>
         </div>
-    </footer>
+                
     </body>
 </html>
