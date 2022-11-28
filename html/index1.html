@@ -18,6 +18,9 @@
             $(".header").slideToggle("slow");
           });
         });
+        function out(){
+            location.replace('./login.html'); 
+        } 
         </script>
     </head>
     <body>
@@ -26,12 +29,15 @@
                 <li class="main"><a href="#">主页<span class="sprite smile"></span></a></li>
                 <li class="main"><a href="./index2.html" target="_blank"><span class="sprite fish"></span>列表</a></li>
                 <li class="main" ><a href="./index3.html"><span class="sprite people"></span>编辑</a></li>
+                <li class="main" ><a href="./login.html"><span class="sprite people"></span>登陆</a></li>
             </ul>
+           
         </div>
-            
+       
         <div class="header" >
             <h2>你喜欢猫吗？你未来想养猫吗？你了解那些品种的猫🐱吗</h2>
         </div> 
+        <header><span>欢迎您，游客</span> <button id="logout" onclick="out()">登出</button></header>
             <div class="container">
                 <p id="content" class="me-text f2">            
                     猫，属于猫科动物，是全世界家庭中较为广泛的宠物。家猫的祖
