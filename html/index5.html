@@ -3,11 +3,168 @@
     <head lang="en">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title> 金渐层</title>
+        <link rel="stylesheet" href="../css/test1.css">
+        <title> 布偶猫</title>
+        <style>
+            .clearfix:before, .clearfix:after {
+                content: " ";
+                display: table;
+            }
+            .clearfix:after { clear: both; }
+            .clearfix {*zoom:1;}/*IE/7/6*/
+            .details_header_left{
+                float: left;
+                width: 700px;
+                height: 270px; 
+            }
+            .details_header_right{
+                float:left;
+                width: 270px;
+                height: 270px;
+            }
+            .textlabel{
+                font-weight: bolder;
+                font-size:20px;
+            }
+            /* 详情页导航栏 */
+            .details_header{
+                display:block;
+                position: relative;
+                width: 1450px;
+                height: 270px;
+                padding-left: 10px;
+                background-color: rgb(209, 193, 193);
+            }
+            .title1{
+                text-align: center;
+                text-shadow:5px 5px 5px #FF0000;
+            }
+            img {
+                display: block;    
+                width: 300px;
+                text-align: center;
+                margin: 0 auto;
+            }
+            .footer{
+                display: grid;
+                width: 1500px;
+                height: 100px;
+                grid-template-columns: repeat(3,1fr);
+                background-color: dimgrey;
+            }
+            .tone{
+                grid-area: 1/2;
+            }
+            .ttwo{
+                grid-area: 2/3;
+            }
+            .tthree{
+
+            }
+            h5{
+               font-size: large;
+               color: cornflowerblue;
+            }
+            .comments{
+                display: block;
+                width:1100px;
+                height:800px;
+                margin-left: 100px;
+                margin-right: 100px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-style: double;
+                border-color:#000000;
+                border-width: 2px;
+            }
+            .cheader{
+                font-size: 20px;
+                color: cornflowerblue;
+                text-align: center;
+            }
+        </style>
+        <script>
+           
+            function fun(){
+             var con = $('#vc').val();
+             var li="<li >"+con+"<br><a href='#userbody' class='remove' onclick='RemoveRow(this);'>删除</a><hr></li>";
+              $('#userbody').append(li);
+            }
+            function RemoveRow(o){
+            $(o).parent().remove();
+            }
+        </script>
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     </head>
     <body>
-        <div>
-            
+        <h1 class="title1">布偶猫</h1>
+        <div class="details_header clearfix">
+            <div class="details_header_left">
+                <h2>简介：</h2> 
+                <p class="textlabel">主要颜色组成:灰色，金色，白色<br>无斑纹</p>
+                <p>布偶猫是猫中较大、较重的一种。它的头呈V形，眼大而圆，被毛丰厚，四肢粗大，尾长，身体柔软，多为三色或双色猫 。</p>
+            </div> 
+            <div class="details_header_right">
+                <img height="270px" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.goupuzi.com%2Fnewatt%2FMon_2203%2F1_184491_8ff6960e7ffeed9.jpg&refer=http%3A%2F%2Fwww.goupuzi.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670313791&t=14fe4b793753fc449c2cb7d01a3a3c08">
+            </div>           
         </div>
+        <div class="box">
+            <h4>性格特点</h4>
+            <p class="me-text ">
+                布偶猫向来以其温柔的性格被众人所爱，虽然小布偶猫仍旧那么活跃，但是相比于其它猫咪来说，布偶猫已经够温和了。
+                而随着布偶猫的成长，铲屎官们就能感受到养布偶果然是正确的选择，像布偶猫的这几个主要性格就特别令人喜爱。<br>
+            </p>
+            <h4>优点</h4>
+            <h5>1.特别粘人</h5>
+            <p class= "me-text">
+                相信所有铲屎官，养猫都希望能养一只粘人的猫咪，否则养猫的体验感就非常差。正好布偶猫就是特别粘人，见到主人就会粘上去，还会在门口迎接主人回家。
+
+                平时周末还能抱着布偶猫在家看看剧，简直就是“人生赢家”啊。
+            </p>
+                <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.goupuzi.com%2Fnewatt%2FMon_1906%2F1_179959_f25ae5e13f892b4.jpg&refer=http%3A%2F%2Fwww.goupuzi.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670313791&t=03d4a968e40260fb443ce9bd9bb06b81">
+            <h5>2.对人友善</h5>
+            <p class="me-text ">
+                布偶猫对任何人都非常友善，不会随意对人“呲牙”。布偶猫不仅长相温柔，性格也非常温柔，而且很善于交际，而且对小孩子非常友善，可以作为小孩子的玩伴。
+
+                它们平时非常好静，很少大吵大叫，养一只也不会影响主人或邻近。<br>
+            </p>
+            <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fnimg.ws.126.net%2F%3Furl%3Dhttp%253A%252F%252Fdingyue.ws.126.net%252F2022%252F1003%252Fb84d77b2j00rj6f3z000tc000lt00dxm.jpg%26thumbnail%3D660x2147483647%26quality%3D80%26type%3Djpg&refer=http%3A%2F%2Fnimg.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670314289&t=a027ecf8494f24380d834c4c22b2af2a">
+            <h5>3.忍耐性高</h5>
+            <p class="me-text ">
+                布偶猫的性格真的很好，它们不仅对主人热情，对主人的忍耐性也是非常高的。如果主人不小心踩到它的尾巴，它也不会去凶主人，它们只会默默忍受。
+
+                可想而知布偶猫对主人的感情也是非常深厚的，主人一定要好好爱它。</p>
+            <img src="https://pic.rmb.bdstatic.com/bjh/down/3b4c7add78bc79c7c431901d14fe3b75.gif">
+    
+            <h5>4.长相好看</h5>
+            <p class="me-text ">
+                不少人养布偶猫都是被它的长相所吸引，因为没有人能抵挡得住布偶猫的长相，实在是太好看了。难怪布偶猫被称为猫界中的“仙女”，果然是名不虚传的。
+
+                布偶猫的颜值这么高，随便拍个照片发朋友圈都倍有面子~
+            </p>
+            <img src="https://pic.rmb.bdstatic.com/bjh/down/677cd27c6011da80e939e64e508690fa.gif">
+            <h5>5.喜欢与主人互动</h5>
+            <p class="me-text ">
+                大部分布偶猫都是很喜欢与主人互动的，虽然它们平时很好静，但是却很乐意与主人互动。那么宠主要坚持每天抽出20分钟左右的时间来与布偶猫互动，这样能增进感情。
+            </p>
+           <img  src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp3.toutiaoimg.com%2Forigin%2Fpgc-image%2F4fd6220f119a44e39ac7fcee851de29a%3Ffrom%3Dpc&refer=http%3A%2F%2Fp3.toutiaoimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670314289&t=4b636cedc752ad044154824826f66c04">
+           <h5>6毛绒绒的很舒服.</h5>
+           <p class="me-text">
+            布偶猫的毛发长长的，而且非常浓密，毛绒绒的，撸猫手感非常好，就好像是一个柔软的布娃娃一样。
+            但是由于布偶猫的毛发很长，也比较难打理，宠主要坚持每天给布偶猫梳毛。
+           </p>
+           <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn20200226ac%2F231%2Fw660h371%2F20200226%2Fc8ba-ipzreiw4186452.jpg&refer=http%3A%2F%2Fn.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670314289&t=5585d956b77a3a1b4411e12e91cb4196">
+        </div>
+        <br><br><br>
+        <div class="comments">
+            <script>
+                 $.get("./tpl/comment.tpl",function(result){
+                    $('.comments').html(result);
+                });
+            </script>
+        </div> 
+       
     </body>
-    </html>
+</html>
