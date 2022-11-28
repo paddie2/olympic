@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<title>登录</title>
+		<link rel="stylesheet" href="css/index.css" />
+        <script src="js/index.js"></script>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+ 
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				background: linear-gradient(#141e30, #243b55);
+			}
+ 
+			.login {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 400px;
+				padding: 40px;
+				background-color: rgba(0, 0, 0, 0.2);
+				box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+			}
+ 
+			.login h2 {
+				color: #fff;
+				margin-bottom: 30px;
+			}
+ 
+			.login .login_box {
+				position: relative;
+				width: 100%;
+			}
+ 
+			.login .login_box input {
+				outline: none;
+				border: none;
+				width: 100%;
+				padding: 10px 0;
+				margin-bottom: 30px;
+				color: #fff;
+				font-size: 16px;
+				border-bottom: 1px solid #fff;
+				background-color: transparent;
+			}
+ 
+			.login .login_box label {
+				position: absolute;
+				top: 0;
+				left: 0;
+				padding: 10px 0;
+				color: #fff;
+				pointer-events: none;
+				transition: all 0.5s;
+			}
+ 
+			.login .login_box input:focus+label,
+			.login .login_box input:valid+label {
+				top: -20px;
+				color: #03e9f4;
+				font-size: 12px;
+			}
+ 
+			.login a {
+			position: relative;
+			padding: 10px 20px;
+			color: #03e9f4;
+			text-decoration: none;
+			transition: all 0.5s;
+			}
+ 
+			.login a:hover {
+				color: #fff;
+				border-radius: 5px;
+				background-color: #03e9f4;
+				box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+			}
+ 
+			.login a span {
+			position: absolute;
+			}
+ 
+		.login a span:first-child {
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(to right, transparent, #03e9f4);
+	animation: move1 1s linear infinite;
+		}
+ 
+		.login a span:nth-child(2) {
+	right: 0;
+	top: -100%;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(transparent, #03e6f4);
+	animation: move2 1s linear 0.25s infinite;
+		}
+ 
+		.login a span:nth-child(3) {
+	right: -100%;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(to left, transparent, #03e9f4);
+	animation: move3 1s linear 0.5s infinite;
+		}
+ 
+		.login a span:last-child {
+	left: 0;
+	bottom: -100%;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(#03e9f4, transparent);
+	animation: move4 1s linear 0.75s infinite;
+		}
+ 
+		.ex{
+	position: absolute;
+	left: 90px;
+	bottom: 0px;
+		}
+ 
+		.ex1{
+	position: absolute;
+	left: -110px;
+	bottom: 40px;
+		}
+ 
+		.ex-1{
+	position: absolute;
+	left: -110px;
+	bottom: 0px;
+		}
+ 
+		.ex-2{
+	position: absolute;
+	left: 90px;
+	bottom: 40px;
+		}
+ 
+		@keyframes move1 {
+	0% {
+		left: -100%;
+	}
+ 
+	50%,
+	100% {
+		left: 100%;
+	}
+		}
+ 
+		@keyframes move2 {
+	0% {
+		top: -100%;
+	}
+ 
+	50%,
+	100% {
+		top: 100%;
+	}
+		}
+ 
+		@keyframes move3 {
+	0% {
+		right: -100%;
+	}
+ 
+	50%,
+	100% {
+		right: 100%;
+	}
+		}
+ 
+		@keyframes move4 {
+	0% {
+		bottom: -100%;
+	}
+ 
+	50%,
+	100% {
+		bottom: 100%;
+	}
+		}
+		</style>
+		<script>
+			function setCookie(cname, cvalue, exdays) {
+    			var d = new Date();
+    			d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    			var expires = "expires="+d.toUTCString();
+    			document.cookie = cname + "=" + cvalue + "; " + expires+"; path=/";//path=/是根路径
+			}
+//获取cookie
+			function getCookie(cname) {
+   				var name = cname + "=";
+    			var ca = document.cookie.split(';');
+    			for(var i=0; i<ca.length; i++) {
+       		 		var c = ca[i];
+       				while (c.charAt(0)==' ') c = c.substring(1);
+        			if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+    			}
+    			return "";
+			}
+//清除cookie
+			function clearCookie(name) {
+    			setCookie(name, "", -1);
+			}
+
+
+			window.addEventListener("load", function() {
+				var tx = localStorage;
+				var body = document.querySelector("body");
+				var btn = document.querySelectorAll(".ex");
+				var btn1 = document.querySelectorAll(".ex1");
+				var login = document.querySelectorAll(".login");
+				btn1[0].addEventListener("click", fu);
+				btn[1].addEventListener("click", fu1);
+				btn1[1].addEventListener("click", fu2);
+				btn[0].addEventListener("click", fu3);
+ 
+			function my(cs) {
+		if (cs > localStorage.getItem("verify").length >= 1) {
+			tx.verify += 1;
+			body.style.display = "none";
+			location.replace('./index1.html'); // 括号里面可换成登录成功后转跳页面
+		} else if (localStorage.getItem("verify").length == cs) {
+			localStorage.removeItem("verify");
+		}
+	}
+			my(2); // 这里限制用户打开多少次网页就登录一次
+ 
+			function fu() {
+				login[0].style.display = "none";
+				login[1].style.display = "";
+				btn[1].className = "ex-1";
+				btn1[1].className = "ex-2";
+			}
+ 
+			function fu1() {
+		login[0].style.display = "";
+		login[1].style.display = "none";
+	}
+ 
+			function fu2() {
+			name1 = document.querySelector("#name1").value;
+			pwd1 = document.querySelector("#pwd1").value;
+		if (!name1 || !pwd1) {
+			alert("注册失败！！！");
+		} else {
+			alert("注册成功！");
+			var AccountValue = name1;
+			var passwordValue = pwd1;
+			//localStorage.setItem("Account", AccountValue);
+			//localStorage.setItem("password", passwordValue);
+			//var val = AccountValue+":"+passwordValue;//把名字和密码连起来(1)
+			setCookie("username", AccountValue, 7);
+			setCookie("password",passwordValue,7);
+			fu1();
+		}
+	}
+ 
+			function fu3() {
+		var name = document.querySelector("#name").value;
+		var pwd = document.querySelector("#pwd").value;
+		//namesj = localStorage.getItem("Account");
+		//pwdsj = localStorage.getItem("password");
+		namesj=getCookie("username");
+		pwdsj=getCookie("password");
+		if (!name || !pwd) {
+			alert("账号或密码错误！！！");
+		} else if (name == namesj && pwd == pwdsj || name == 666 && pwd == 888) {
+			// 666与888是预设账号和密码，可删掉 "|| name == 666 && pwd == 888"这段即可	
+			VerifyValue = 1;
+			localStorage.setItem("verify", VerifyValue);
+			localStorage.getItem("verify");
+			alert("登录成功！！！");
+			location.replace('./index1.html'); // 括号里面可换成登录成功后转跳页面
+		} else {
+			alert("账号或密码错误！！！");
+		}
+	}
+			})
+		</script>
+	</head>
+	<body>
+		<!-- 用户登录界面 -->
+		<div class="login">
+			<h2>用户登录</h2>
+			<div class="login_box">
+				<input type="text" id='name' />
+				<label for="name">账号</label>
+			</div>
+			<div class="login_box">
+				<input type="password" id='pwd'>
+				<label for="pwd">密码</label>
+			</div>
+			<a class="ex">
+				登录
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+			<a class="ex1">
+				注册
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+		</div>
+ 
+		<!-- 用户注册界面 -->
+		<div class="login" style="display: none;">
+			<h2>用户注册</h2>
+			<div class="login_box">
+				<input type="text" id="name1" />
+				<label for="name">注册账号</label>
+			</div>
+			<div class="login_box">
+				<input type="password" id="pwd1">
+				<label for="pwd">注册密码</label>
+			</div>
+			<a class="ex">
+				登录
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+			<a class="ex1">
+				注册
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+		</div>
+	</body>
+</html>
