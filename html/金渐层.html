@@ -65,8 +65,37 @@
                font-size: large;
                color: cornflowerblue;
             }
-            
+            .comments{
+                display: block;
+                width:1100px;
+                height:800px;
+                margin-left: 100px;
+                margin-right: 100px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-style: double;
+                border-color:#000000;
+                border-width: 2px;
+            }
+            .cheader{
+                font-size: 20px;
+                color: cornflowerblue;
+                text-align: center;
+            }
         </style>
+        <script>
+           
+            function fun(){
+             var con = $('#vc').val();
+             var li="<li >"+con+"<br><a href='#userbody' class='remove' onclick='RemoveRow(this);'>删除</a><hr></li>";
+              $('#userbody').append(li);
+            }
+            function RemoveRow(o){
+            $(o).parent().remove();
+            }
+        </script>
         <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     </head>
     <body>
@@ -127,10 +156,14 @@
            <img  height="400px"src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fci.xiaohongshu.com%2F6300b1b8-6221-0c96-dc65-7437b5716993%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fci.xiaohongshu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670313352&t=cb1b02e69f72a43dd6d2251d21a2980f">
         </div>
         <br><br>
-    <footer class="footer me-text">
-        <div class="tone">
-            <p>footer</p>
+  
+        <div class="comments">
+          
         </div>
-    </footer>
+        <script>
+            $.get("./tpl/comment.tpl",function(result){
+               $('.comments').html(result);
+           });
+       </script>
     </body>
 </html>
