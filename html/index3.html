@@ -1,46 +1,166 @@
-<!DOCTYPE html> 
-<html>
-    <head lang="en">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link rel="stylesheet" href="../css/test1.css">
-        <title> 增删改查</title>
-    </head>
-    <body>
-        <from action="">
-            <fieldset>
-                <legend>添加</legend>
-                名称:<input type="text" name="breed"><br>
-                简介:<input type="text" name="desc"><br>
-                <select name="" size="1">
-                    <option value="">中华田园猫</option>
-                    <option value="">美国</option>
-                    <option value="">英国</option>
-                    <option value="">俄罗斯</option>
-                </select>
-                <h4>性格特点:</h4>
-                <textarea  name="areaName"rows="10" cols="30">
-                    
-                </textarea>
-                <h4>优点:</h4>
-                <textarea  name="areaName"rows="10" cols="30">
-                    
-                </textarea><br>
-                图片:<input type="img">
-                <br>
-                是否有斑纹:
-                <input type="radio" name="breed">是
-                <input type="radio" name="breed" >否
-                <br><br>
-                主要颜色组成:
-                <input type="checkbox" name="color">橙色
-                <input type="checkbox" name="color">黑色
-                <input type="checkbox" name="color">金色
-                <input type="checkbox" name="color">银色
-                <br><br>
-                <input type="submit">
-                <input type="reset" name="reset" value="重置">
-            </fieldset>   
-        </from>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>博文发布</title>
+  <link rel="stylesheet" href="../css/test1.css">
+  <!--  <link href="../../static/images/me.jpg" rel="icon" type="image/x-ico">-->
+  <!-- <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css" >-->
+  <!--  <link rel="stylesheet" href="../../static/css/me.css">-->
+  <style>
+     div.img {
+                border: 1px solid #ccc;
+            }
+
+            div.img:hover {
+                border: 1px solid #777;
+            }
+
+        
+            .desc {
+                padding: 15px;
+                text-align: center;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            .responsive {
+                padding: 0 6px;
+                float: left;
+               
+            }
+
+  </style>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<!--导航-->
+
+
+
+<!--中间内容-->
+<div  class="">
+  <div >
+    <form id="blog-form" action="#"  class="ui form">
+      <input type="hidden" name="published" >
+      <input type="hidden" name="id" >
+      <input type="text" name="title" placeholder="名称" id="context" value="狸花猫" >
+      <div class="menu">
+        <select name="" size="1">
+          <option value="">中华田园猫</option>
+          <option value="">美国</option>
+          <option value="">英国</option>
+          <option value="">俄罗斯</option>
+        </select>
+      </div>
+
+      <textarea value="性格温和"  placeholder="性格特点" name="content" id="value1" ></textarea>
+      <br>
+      <textarea value="不挑食" name="description" placeholder="优点"id="value2" ></textarea>
+      <br>
+      <label class="">是否有斑纹</label>
+      <input type="radio" id="breed1" name="breed" checked class="hidden">
+      <label for="breed1">是</label>
+      <input type="radio" id="breed2" name="breed"  class="hidden">
+      <label for="breed2">否</label>
+      <br>
+      <label class="">首图</label>
+      <select name="" size="1" id="myselect">
+        <option value="../img/图片1.png" selected>../img/图片1.png</option>
+        <option value="../img/2.jpeg">../img/2.jpeg</option>
+        <option value="../img/3.jpg">../img/3.jpg</option>
+        <option value="../img/4.jpeg">../img/4.jpeg</option>
+      </select>
+      
+            <input type="checkbox" id="recommend" name="recommend" checked class="hidden">
+            <label for="recommend">黑色</label>
+            <input type="checkbox" id="shareStatement" name="shareStatement"  class="hidden">
+            <label for="shareStatement">橙色</label>
+            <input type="checkbox" id="appreciation" name="appreciation" class="hidden">
+            <label for="appreciation">白色</label>
+            <input type="checkbox" id="commentabled" name="commentabled" class="hidden">
+            <label for="commentabled">灰色</label>
+
+      <div class="ui error message"></div>
+     
+
+      <div >
+
+        <button type="button" id="save-btn" class="ui secondary button">保存</button>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+<br>
+<br>
+<!--底部栏-->
+<ul class="uu">
+  <!--容器-->
+ <li> 布偶猫<img  height='240px' width='350px' src='../img/3.jpg' ><br><a href='#uu'  class='remove' onclick='RemoveRow(this);'>删除</a></li>
+ <li>蓝猫<img  height='240px' width='350px' src='../img/4.jpeg' ><br><a href='#uu'  class='remove' onclick='RemoveRow(this);'>删除</a></li>
+</ul>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script>
+    document.getElementById("value1").value="性格温和脾气好";
+    document.getElementById("value2").value="不挑食";
+  $('#save-btn').click(function () {
+    $('[name="published"]').val(false);
+    $('#blog-form').submit();
+    var con = $('#context').val();
+    var links = $('#myselect option:selected' ).text();
+    alert(links);
+    if(con!=''&&con!=null&&links!=' '&&links!=null){
+
+      li="<li>"+con+"<img  height='240px' width='350px' src=../img/图片1.png class='remove' onclick='RemoveRow(this);'></li>";
+      $('.uu').append(li);
+    }
+
+  });
+    function RemoveRow(o){
+      $(o).parent().remove();
+    }
+  $('.ui.form').form({
+    fields : {
+      title : {
+        identifier: 'title',
+        rules: [{
+          type : 'empty',
+          prompt: '标题：请输入博客标题'
+        }]
+      },
+      content : {
+        identifier: 'content',
+        rules: [{
+          type : 'empty',
+          prompt: '标题：请输入性格特点'
+        }]
+      },
+
+      firstPicture : {
+        identifier: 'firstPicture',
+        rules: [{
+          type : 'empty',
+          prompt: '标题：请输入猫咪图片'
+        }]
+      },
+      description : {
+        identifier: 'description',
+        rules: [{
+          type : 'empty',
+          prompt: '标题：请输入优点'
+        }]
+      }
+    }
+  });
+
+</script>
+</body>
+</html>
