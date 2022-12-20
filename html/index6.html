@@ -85,19 +85,17 @@
                 text-align: center;
             }
             
-             @media only screen and (max-width: 700px){
-                .responsive {
-                    width: 49.99999%;
-                    margin: 6px 0;
-                }
-            }
-
-            @media only screen and (max-width: 500px){
-                .responsive {
-                    width: 100%;
-                }
-            }
         </style>
+        <script type="text/javascript" >
+            function fun(){
+                 var con = $('#vc').val();
+                 var li="<li >"+con+"<br><a href='#userbody' class='remove' onclick='RemoveRow(this);'>删除</a><hr></li>";
+                  $('#userbody').append(li);
+              }
+            function RemoveRow(o){
+            $(o).parent().remove();
+            }
+            </script>
         <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     </head>
     <body>
