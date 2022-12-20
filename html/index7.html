@@ -97,6 +97,16 @@
                 }
             }
         </style>
+       <script type="text/javascript" >
+        function fun(){
+             var con = $('#vc').val();
+             var li="<li >"+con+"<br><a href='#userbody' class='remove' onclick='RemoveRow(this);'>删除</a><hr></li>";
+              $('#userbody').append(li);
+          }
+        function RemoveRow(o){
+        $(o).parent().remove();
+        }
+        </script>
         <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     </head>
     <body>
